@@ -6,11 +6,28 @@ public enum Command {
     ADD(false) {
         @Override
         public void execute(String arguments) {
-            //TODO
+            String[] parts = arguments.split("/");
+
+            String description = null;
+            double amount = 0.0;
+            String category = null;
+
+            if (parts.length >= 1) {
+                description = parts[0].trim();
+            }
+            if (parts.length >= 2) {
+                amount = Double.parseDouble(parts[1].trim());
+            }
+            if (parts.length >= 3) {
+                category = parts[2].trim();
+            }
+
+            Expense e = new Expense(description, amount, category);
+            ExpenseManager.addExpense(e);
+            System.out.println(DisplayMessage.ADD_EXPENSE + e);
         }
     },
     DELETE(false) {
-
         @Override
         public void execute(String arguments) {
             try {
@@ -25,6 +42,12 @@ public enum Command {
             } catch (NumberFormatException e) {
                 //TODO: print error message (it is not a number)
             }
+        }
+    },
+    LIST(true) {
+        @Override
+        public void execute(String arguments) {
+            ExpenseManager.listExpenses();
         }
     },
     TOTAL(true) {
@@ -62,8 +85,10 @@ public enum Command {
     //TODO: extend the Command with new features
 
     public final boolean acceptEmptyArg;
-    private Command(boolean acceptEmptyArg){
+
+    private Command(boolean acceptEmptyArg) {
         this.acceptEmptyArg = acceptEmptyArg;
     }
+
     public abstract void execute(String arguments);
 }

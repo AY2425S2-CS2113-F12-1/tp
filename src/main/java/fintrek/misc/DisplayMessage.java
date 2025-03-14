@@ -10,6 +10,7 @@ public class DisplayMessage {
     public static final String END_CONVERSATION_MESSAGE = "bye";
     public static final String ARG_EMPTY_MESSAGE = "Arguments cannot be empty";
     public static final String INVALID_NUM_MESSAGE = "Please enter a valid number";
+    public static final String ADD_EXPENSE = "Expense added: ";
 
     public static void addFormatPrinter() {
         System.out.println("Format: /add [DESCRIPTION] $[AMOUNT]"); //format of using the specific function
@@ -55,5 +56,4 @@ public class DisplayMessage {
         averageFormatPrinter();
         summaryFormatPrinter();
     }
-
 }
