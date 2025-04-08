@@ -283,6 +283,13 @@ Displays list of valid categories, separated by default and custom.
 If extraneous parameters are supplied to `/list-category`, e.g. `/list-category everything`, then
 `/list-category` would simply behave as usual and display all valid categories.
 
+**Example Output**:
+```
+List of valid categories:
+Default - ENTERTAINMENT, FOOD, GIFTS, HEALTH, TRANSPORT, UNCATEGORIZED, UTILITIES
+Custom -  OTHERS
+```
+
 ---
 
 ### 💲Setting Monthly Budgets: `/budget`
