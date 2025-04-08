@@ -166,6 +166,14 @@ Displays all recorded expenses.
 If extraneous parameters are supplied to `/list`, e.g. `/list everything please`, then
 `/list` would simply behave as usual and display all recorded expenses.
 
+**Example Output**:
+```
+List of expenses: 
+1. Coffee | $5.00 | FOOD | 05-04-2025
+2. dine | $25.80 | FOOD | 05-04-2025
+3. Shoes | $150.00 | SHOPPING | 05-04-2025
+```
+
 ---
 ### 🗃️ Sorting Expenses: `/list-sort` 
 
@@ -214,6 +222,11 @@ then an error message will be returned.
 Also note that if extraneous parameters are supplied to `/total`, e.g. `/total cs2113`, then
 `/total` would simply behave as usual and return the total amount spent.
 
+**Example Output:**
+```
+Total expenses: 745.80
+```
+
 ---
 ### 📊 Calculating Average Expense: `/average` 
 
@@ -230,6 +243,11 @@ exceeds `10_000_000_000` (ten billion).
 
 If extraneous parameters are supplied to `/average`, e.g. `/average hello!`, then
 `/average` would simply behave as usual and return the average amount spent.
+
+**Example Output:**
+```
+Average expenses: 93.23
+```
 
 ---
 ### 🛠️ Adding Custom Categories: `/add-category`
