@@ -116,10 +116,8 @@ Removes an expense by its number in the list.
 ```
 
 **Example Output**:
-```
-Expense "Coffee | $5.00 | FOOD | 05-04-2025" deleted successfully. Remaining expenses: 1
-Expense "Mobile Data | $20.00 | NECESSITIES | 05-03-2025" deleted successfully. Remaining recurring expenses: 1
-```
+
+![img.png](images/delete_output.png)
 
 ---
 ### ✏️ Editing an Expense: `/edit` 
@@ -338,14 +336,12 @@ Budget warnings will be generated when the
 monthly budget is exceeded or almost exceeded (10% short of being exceeded).
 
 **Format (if 10% short of reaching monthly budget limit):**
-```
-WARNING: You are $<BUDGET - TOTAL_EXPENSES> short of reaching your monthly budget of $<BUDGET>
-```
+
+![img.png](images/img_budget_warning.png)
 
 **Format (if exceeded monthly budget limit):**
-```
-WARNING: You have exceeded your monthly budget of $<BUDGET> by $<TOTAL_EXPENSE - BUDGET>
-```
+
+![img.png](images/budget_exceeded.png)
 
 **Example**:
 
@@ -416,10 +412,9 @@ FOOD             : $31.30
 ```
 
 **Example Outputs**:
-```
-Recurring expense added successfully: Mobile Data | $20.00 | NECESSITIES | 05-03-2025
-Expense "test | $5.00 | UNCATEGORIZED | 06-04-2025" deleted successfully. Remaining recurring expenses: 0
-```
+
+![img.png](images/recurring_output.png)
+
 ---
 
 #### Insertion of recurring expenses upon startup
@@ -463,16 +458,8 @@ Shows help messages for commands.
 ```
 
 **Example Output:**
-```
-Format: /add <DESCRIPTION> $<AMOUNT> [/c <CATEGORY>] [/dt <DATE>]
-AMOUNT must be a positive number greater than 0.
-CATEGORY is an optional argument.
-DATE is an optional argument which must be in the form dd-MM-yyyy.
-Example: /add concert tickets $35.80 /c LEISURE /dt 03-05-2025 -
-         adds a regular expense with description 'concert tickets' with the amount $35.80,
-         category 'LEISURE' and date '03-05-2025'.
-```
 
+![img.png](images/extra_features_output.png)
 
 ---
 
