@@ -24,6 +24,7 @@ commands and its details.
 > #### ❗CAUTION
 > - Only enter a command after you see the leading input arrow `>`. Commands will only be read in after `>`.
 > - Do not enter Ctrl+C or Ctrl+Z as this will cause the program to end.
+> - Amounts are stored as `double` values and may suffer from precision issues if too many decimal places are entered (e.g., beyond 15 digits).
 
 ---
 
