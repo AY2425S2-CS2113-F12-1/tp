@@ -1,7 +1,7 @@
 # Developer Guide
 
 * [Acknowledgements](#acknowledgements)
-* [Design & Implementation](#design--implementation)
+* [About FinTrek](#about-fintrek)
 * [Architecture Overview](#architecture-overview)
 * [Core Module Roles](#core-module-roles)
 * [High-Level Flow Summary](#high-level-flow-summary)
@@ -41,7 +41,7 @@ and throughout the tutorials.
 
 This application also takes inspiration from the SE-EDU organization for its User Guide and Developer Guide.
 
-## Design & Implementation
+## About FinTrek
 
 FinTrek is a desktop app designed for university students to manage their expenses, optimized for use via the Command Line Interface (CLI).
 
@@ -53,9 +53,8 @@ from the user to command execution, expense management, and data
 persistence, with shared utilities supporting all layers.
 
 ![](images/ArchitectureOverview.png)
--------------------
-Core Module Roles
--------------------
+
+## Core Module Roles
 
 `User`
 - Represents the user providing input through the CLI interface.
@@ -102,8 +101,7 @@ Core Module Roles
 - Ensures consistent messaging across the UI and command responses.
 
 -------------------------
-High-Level Flow Summary
--------------------------
+## High-Level Flow Summary
 
 1. `Main` launches the application and starts `Ui`.
 2. `Ui`receives input from `User` and routes it to `CommandRegistry`.
@@ -115,9 +113,10 @@ High-Level Flow Summary
 8. Throughout the process, `Util` and `Messages` support validation
    and formatting for consistent behavior and output.
 
--------------------
-Design Principles
--------------------
+---
+
+## Design Principles
+
 
 - Modular and loosely coupled design.
 - Commands are pluggable and easy to extend.
