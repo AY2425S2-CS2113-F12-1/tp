@@ -192,7 +192,7 @@ This will list out expenses sorted in ascending alphabetical order by name.
 
 **Example Output:**
 ```
-Expenses sorted by NAME (ASCENDING): 
+Expenses sorted by NAME (ASC): 
 1. Books | $20.00 | STUDIES | 05-04-2025
 2. Coffee | $5.00 | FOOD | 05-04-2025
 3. MRT | $3.00 | TRANSPORT | 05-04-2025
@@ -262,6 +262,8 @@ Displays list of valid categories, separated by default and custom.
 ```
 /list-category
 ```
+If extraneous parameters are supplied to `/list-category`, e.g. `/list-category everything`, then
+`/list-category` would simply behave as usual and display all valid categories.
 
 ---
 
@@ -294,6 +296,8 @@ Outputs the current monthly budget, total expenses and budget left, as a percent
 ```
 /budget-left
 ```
+If extraneous parameters are supplied to `/budget-left`, e.g. `/budget-left please`, then
+`/budget-left` would simply behave as usual and display all monthly budget left.
 
 **Example Output:**
 ```
