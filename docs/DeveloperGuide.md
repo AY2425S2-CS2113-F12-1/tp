@@ -57,47 +57,47 @@ persistence, with shared utilities supporting all layers.
 Core Module Roles
 -------------------
 
-[User]
+`User`
 - Represents the user providing input through the CLI interface.
 
-[Main]
+`Main`
 - The entry point of the application.
 - Initializes services and launches the UI.
 
-[Ui]
+`Ui`
 - Interfaces directly with the user.
 - Accepts user input and forwards it to the command system.
 - Displays output and error messages to the user.
 
-[CommandRegistry]
+`CommandRegistry`
 - Maintains a registry of all supported commands.
 - Responsible for resolving input commands to actual Command objects.
 
-[Command]
+`Command`
 - Represents the logic behind each user command (e.g., add, edit, list).
 - Interacts with budget, expense data and performs operations.
 
-[CommandParser]
-- Parses structured arguments (e.g., /edit 2 /d lunch /$ 10).
+`CommandParser`
+- Parses structured arguments (e.g., `/edit 2 /d lunch /$ 10`).
 - Used by commands that require detailed or optional arguments.
 
-[Expenses]
+`Expenses`
 - Manages both regular and recurring expenses.
 - Handles all expense-related logic and state.
 
-[Data]
+`Data`
 - Responsible for loading and saving expense and budget data.
 - Interacts with the file system for persistence.
 
-[Budget]
+`Budget`
 - Store budget limit information.
 - Provide warnings to user if their expenses have exceeded a certain limit.
 
-[Util]
+`Util`
 - Provides shared utility functions like input validation and date handling.
 - Used across multiple modules for consistency and reuse.
 
-[Messages]
+`Messages`
 - Central repository of user-facing messages and formatting templates.
 - Ensures consistent messaging across the UI and command responses.
 
@@ -137,31 +137,31 @@ The sequence diagram below illustrates the interactions of Ui and the Command Re
 
 ### Example Flow
 
-1. User Input
+1. `User Input`
   - The user enters a command in the CLI, such as: `/add lunch $5 /c food`
 
-2. CommandRouter
+2. `CommandRouter`
   - Receives the raw input from the user.
   - Splits the input into:
     - Command token: `/add`
     - Arguments: `lunch $5 /c food`
   - Removes the leading "/" to get the command name: "add".
-  - Forwards the command name and arguments to CommandExecutor.
+  - Forwards the command name and arguments to `CommandExecutor`.
 
-3. CommandExecutor
-  - Checks if the command exists by querying CommandRegistry:
-    CommandRegistry.hasCommand("add")
+3. `CommandExecutor`
+  - Checks if the command exists by querying `CommandRegistry`:
+    `CommandRegistry.hasCommand("add")`
   - If the command is valid:
     - Retrieves the corresponding Command instance:
-      CommandRegistry.getCommand("add")
-  - Passes the arguments to the command's execute() method.
+      `CommandRegistry.getCommand("add")`
+  - Passes the arguments to the command's `execute()` method.
 
-4. CommandRegistry
-  - Holds a static mapping of command names to their Command objects.
-  - All commands are registered via CommandRegistrar during app initialization.
-  - Ensures that the correct Command subclass (e.g., AddCommand) is returned based on the name.
+4. `CommandRegistry`
+  - Holds a static mapping of command names to their `Command` objects.
+  - All commands are registered via `CommandRegistrar` during app initialization.
+  - Ensures that the correct Command subclass (e.g., `AddCommand`) is returned based on the name.
 
----> The control now passes to the specific Command class for execution (e.g., AddCommand),
+---> The control now passes to the specific Command class for execution (e.g., `AddCommand`),
 which will parse arguments and perform the core business logic.
 
 ## Command
