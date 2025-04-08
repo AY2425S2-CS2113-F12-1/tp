@@ -14,7 +14,7 @@
 `.jar` file in, and use the `java -jar tp.jar` command to run the application.
 5. Input some commands to start
 managing your expenses or type `/help` to learn about the commands.
-Alternatively, refer to the [Features](#Features) section for the full list of
+Alternatively, refer to the [Features](#features) or [Summary](#command-summary) section for the full list of
 commands and its details.
 
 ![img.png](images/img.png)
